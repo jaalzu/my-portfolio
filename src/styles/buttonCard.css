@@ -1,16 +1,4 @@
----
-interface Props {
-  class?: string;
-}
 
-const { class: className = '' } = Astro.props;
----
-
-<div class={`button-card ${className}`}>
-  <slot />
-</div>
-
-<style>
   .button-card {
     background: linear-gradient(
         180deg,
@@ -68,4 +56,3 @@ const { class: className = '' } = Astro.props;
     position: relative;
     z-index: 2;
   }
-</style>

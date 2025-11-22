@@ -1,21 +1,5 @@
----
-interface Props {
-  active?: boolean;
-  href?: string;
-  class?: string;
-}
 
-const { active = false, href = '#', class: className = '' } = Astro.props;
----
 
-<a 
-  href={href} 
-  class={`link-button ${active ? 'link-button-active' : 'link-button-inactive'} ${className}`}
->
-  <slot />
-</a>
-
-<style>
   /* Estilos base para ambos estados */
   .link-button {
     display: flex;
@@ -100,4 +84,3 @@ const { active = false, href = '#', class: className = '' } = Astro.props;
   .link-button-inactive:hover :global(*) {
     text-decoration: underline;
   }
-</style>

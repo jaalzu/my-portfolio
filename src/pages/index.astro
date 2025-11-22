@@ -1,16 +1,88 @@
 ---
-
+// src/pages/index.astro
+import '../styles/card.css';
+import '../styles/buttonCard.css';
+import '../styles/containerCard.css';
+import '../styles/linkButton.css';
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Cards Demo</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="demo-container">
+			
+			<!-- Card estilo header -->
+			<div class="card-header">
+				<h2>Card Header</h2>
+				<p>Gradiente metálico con brillo</p>
+			</div>
+
+			<!-- Card estilo contenido -->
+			<div class="card-content">
+				<h2>Card Content</h2>
+				<p>Gradiente oscuro para contenido</p>
+			</div>
+
+			<!-- Button Card con hover -->
+			<div class="button-card">
+				<h3>Button Card</h3>
+				<p>Hover para ver el efecto verde</p>
+			</div>
+
+			<!-- Container Card -->
+			<div class="container-card">
+				<h3>Container Card</h3>
+				<p>Estilo para headers y barras</p>
+			</div>
+
+			<!-- Link Buttons -->
+			<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+				<a href="#" class="link-button link-button-active">
+					<span>Link Activo</span>
+				</a>
+				
+				<a href="#" class="link-button link-button-inactive">
+					<span>Link Inactivo</span>
+				</a>
+			</div>
+
+		</div>
 	</body>
 </html>
+
+<style>
+	body {
+		background: url('/windows_xp_46.jpg') center/cover no-repeat fixed;
+		margin: 0;
+		padding: 40px;
+		font-family: system-ui, -apple-system, sans-serif;
+		color: white;
+	}
+	a{
+		color: white;
+		font-weight: 600;
+	}
+
+	.demo-container {
+		max-width: 800px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	h1, h2, h3 {
+		margin: 0 0 10px 0;
+	}
+
+	p {
+		margin: 0;
+		opacity: 0.9;
+	}
+</style>
