@@ -1,0 +1,23 @@
+---
+import '../styles/glassRetro.css';
+const { width = 164, height = 64, borderRadius = 50 } = Astro.props;
+---
+
+<button class="glass-base glass-hover glass-button" style={`width: ${width}px; height: ${height}px; border-radius: ${borderRadius}px;`}>
+  <slot />
+</button>
+
+<style>
+  .glass-button {
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .glass-button:active {
+    transform: scale(0.98);
+  }
+</style>

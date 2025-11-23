@@ -1,59 +1,36 @@
 ---
 // src/pages/index.astro
-import '../styles/card.css';
-import '../styles/buttonCard.css';
-import '../styles/containerCard.css';
-import '../styles/linkButton.css';
+import Card from '../components/Card.astro';
+import CardTech from '../components/CardTech.astro';
+import ButtonLink from '../components/ButtonLink.astro';
 ---
-
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Cards Demo</title>
-	</head>
-	<body>
-		<div class="demo-container">
-			
-			<!-- Card estilo header -->
-			<div class="card-header">
-				<h2>Card Header</h2>
-				<p>Gradiente metálico con brillo</p>
-			</div>
-
-			<!-- Card estilo contenido -->
-			<div class="card-content">
-				<h2>Card Content</h2>
-				<p>Gradiente oscuro para contenido</p>
-			</div>
-
-			<!-- Button Card con hover -->
-			<div class="button-card">
-				<h3>Button Card</h3>
-				<p>Hover para ver el efecto verde</p>
-			</div>
-
-			<!-- Container Card -->
-			<div class="container-card">
-				<h3>Container Card</h3>
-				<p>Estilo para headers y barras</p>
-			</div>
-
-			<!-- Link Buttons -->
-			<div style="display: flex; gap: 10px; flex-wrap: wrap;">
-				<a href="#" class="link-button link-button-active">
-					<span>Link Activo</span>
-				</a>
-				
-				<a href="#" class="link-button link-button-inactive">
-					<span>Link Inactivo</span>
-				</a>
-			</div>
-
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Glass Components Demo</title>
+  </head>
+  <body>
+    <div class="container">
+      <Card width={680} height={330} borderRadius={50}>
+        <h2>Título de la Card</h2>
+        <p>Este es un texto descriptivo dentro de la card con efecto glass.</p>
+        
+        <CardTech width={35} height={35} borderRadius={24}>
+          <svg viewBox="0 0 630 630" xmlns="http://www.w3.org/2000/svg">
+            <rect width="630" height="630" fill="#f7df1e"/>
+            <path d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" fill="#323330"/>
+          </svg>
+        </GlassImageContainer>
+        
+        <ButtonLink width={164} height={43} borderRadius={50}>
+          Continuar
+        </ButtonLink>
+      </GlassCard>
+	  
+    </div>
+  </body>
 </html>
 
 <style>
@@ -64,6 +41,7 @@ import '../styles/linkButton.css';
 		font-family: system-ui, -apple-system, sans-serif;
 		color: white;
 	}
+	
 	a{
 		color: white;
 		font-weight: 600;
@@ -82,7 +60,11 @@ import '../styles/linkButton.css';
 	}
 
 	p {
-		margin: 0;
-		opacity: 0.9;
-	}
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.9;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.5;
+  }
 </style>

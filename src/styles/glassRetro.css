@@ -1,0 +1,70 @@
+/* Estilos base compartidos para cards y botones */
+.glass-base {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(103, 108, 112, 0.3) 30%,
+    rgba(22, 22, 22, 0.3) 50%,
+    rgba(0, 0, 0, 0.2) 90%,
+    rgba(62, 65, 67, 0.3) 100%
+  );
+  box-shadow: 
+    0px 7px 10px rgba(0, 0, 0, 0.3),
+    inset 0px 10px 10px rgba(121, 255, 253, 0.178),
+    inset 0px -2px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 13px;
+}
+  
+
+/* Efecto hover SOLO para botones */
+.glass-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(127, 140, 124, 0.1) 30%,
+      rgba(145, 152, 141, 0.2) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(111, 118, 122, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(62, 65, 67, 0.2) 100%
+    );
+
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glass-button:hover::before {
+  opacity: 1;
+}
+
+/* Asegurar que el contenido del botón esté encima del overlay */
+.glass-button > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Variantes específicas */
+.glass-card {
+  padding: 16px;
+}
+
+.glass-button {
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.glass-button:active {
+  transform: scale(0.98);
+}
+
+.glass-container {
+  padding: 16px;
+}

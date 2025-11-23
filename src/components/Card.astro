@@ -1,0 +1,18 @@
+---
+import '../styles/glassRetro.css';
+const { width = 794, height = 478, borderRadius = 50 } = Astro.props;
+---
+
+<div class="glass-base glass-card" style={`width: ${width}px; height: ${height}px; border-radius: ${borderRadius}px;`}>
+  <slot />
+</div>
+
+<style>
+  .glass-card {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+</style>

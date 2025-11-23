@@ -1,0 +1,24 @@
+---
+import '../styles/glassRetro.css';
+const { width = 100, height = 100, borderRadius = 24 } = Astro.props;
+---
+
+<div class="glass-base glass-image-container" style={`width: ${width}px; height: ${height}px; border-radius: ${borderRadius}px;`}>
+  <slot />
+</div>
+
+<style>
+  .glass-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .glass-image-container :global(svg),
+  .glass-image-container :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
