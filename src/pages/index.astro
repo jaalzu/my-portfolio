@@ -1,9 +1,15 @@
 ---
-// src/pages/index.astro
-import Card from '../components/Card.astro';
-import CardTech from '../components/CardTech.astro';
-import ButtonLink from '../components/ButtonLink.astro';
+ import Card from '../components/retro/Card.astro';
+ import CardTech from '../components/retro/CardTech.astro';
+ import ButtonLink from '../components/retro/ButtonLink.astro'
+import GlassCard from "../components/GlassCard.jsx";
+
+import Hero from "../components/Hero.jsx"
+import GlassButton from "../components/GlassButton.jsx"
+import GlassTechBox from "../components/GlassTechBox.jsx"
+
 ---
+
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -12,7 +18,58 @@ import ButtonLink from '../components/ButtonLink.astro';
     <title>Glass Components Demo</title>
   </head>
   <body>
-    <div class="container">
+	<div class="container">
+			<GlassTechBox client:only="react">
+				react
+			</GlassTechBox>
+			
+		</div>
+		<div class="container">
+
+			<Hero client:only="react" />
+		</div>
+
+    
+
+
+		<GlassButton client:only="react">
+  Continuar
+</GlassButton>
+
+  </body>
+</html> 
+
+
+<style>
+  body {
+    margin: 0;
+	padding: 0;
+	max-width: 1200px;
+	min-height: 100vh;
+	margin: auto;
+    background: url('/windows_xp_46.jpg') center/cover no-repeat fixed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+  h2 {
+    margin: 0 0 16px 0;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  p {
+    margin: 0 0 20px 0;
+    color: #fff;
+  }
+</style>
+
+
+
+<!-- <div class="container">
       <Card width={680} height={330} borderRadius={50}>
         <h2>Título de la Card</h2>
         <p>Este es un texto descriptivo dentro de la card con efecto glass.</p>
@@ -28,43 +85,4 @@ import ButtonLink from '../components/ButtonLink.astro';
           Continuar
         </ButtonLink>
       </GlassCard>
-	  
-    </div>
-  </body>
-</html>
-
-<style>
-	body {
-		background: url('/windows_xp_46.jpg') center/cover no-repeat fixed;
-		margin: 0;
-		padding: 40px;
-		font-family: system-ui, -apple-system, sans-serif;
-		color: white;
-	}
-	
-	a{
-		color: white;
-		font-weight: 600;
-	}
-
-	.demo-container {
-		max-width: 800px;
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
-	}
-
-	h1, h2, h3 {
-		margin: 0 0 10px 0;
-	}
-
-	p {
-    margin: 0;
-    font-size: 16px;
-    opacity: 0.9;
-    text-align: center;
-    max-width: 600px;
-    line-height: 1.5;
-  }
-</style>
+    </div> -->
