@@ -1,14 +1,14 @@
 import GlassFilter from "@nkzw/liquid-glass";
 
 export default function GlassButton({
-  width = 760,
-  height = 448,
-  borderRadius = 4,
+  width = "auto",  // Cambiar de 160 a "auto"
+  height = "auto", // Cambiar de 148 a "auto"
+  borderRadius = 24,
   children,
   intensity = 0.5,
   speed = 1,
   distort = 0.05,
-  color = "#ffffff15", // bajito para que no opaque
+  color = "#ffffff15",
 }) {
   return (
     <GlassFilter
@@ -22,15 +22,15 @@ export default function GlassButton({
           width,
           height,
           borderRadius,
+          padding: "0.75rem 1.5rem", // Añade padding en vez de tamaño fijo
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "transparent",  // sin fondo
-          border: "none",             // sin borde
+          background: "transparent",
+          border: "none",
           color: "#fff",
           fontSize: "1rem",
           cursor: "pointer",
-        
         }}
       >
         {children}

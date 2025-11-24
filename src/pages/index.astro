@@ -8,7 +8,6 @@ import GlassButton from "../components/modern/GlassButton.jsx"
 import GlassTechBox from "../components/modern/GlassTechBox.jsx"
 
 import GlassCardGemi from '../components/modern/GlassCardGemi.astro';
-import Grid from "../components/Grid.astro"
 ---
 <html lang="es">
   <head>
@@ -19,22 +18,44 @@ import Grid from "../components/Grid.astro"
   </head>
   <body>
     <div class="parent">
-      <div class="div1">
-        <GlassCardGemi />
+  <div class="div1">
+    <GlassCardGemi>
+      <h1>Card 1</h1>
+      <p>Descripcion sobre mi</p>
+    </GlassCardGemi>
+  </div>
+  
+<div class="div3">
+        <GlassCardGemi>
+                <GlassButton client:load width={120} height={48} borderRadius={24}>
+        Click aquí
+      </GlassButton>
+          <h1>Card 2</h1>
+          <p>Tech stack</p>
+        </GlassCardGemi>
       </div>
-      <div class="div3">
-        <GlassCardGemi />
-      </div>
-      <div class="div5">
-        <GlassCardGemi />
-      </div>
-      <div class="div6">
-        <GlassCardGemi />
-      </div>
-      <div class="div7">
-        <GlassCardGemi />
-      </div>
-    </div>
+  
+  <div class="div5">
+    <GlassCardGemi>
+      <h1>Card 3</h1>
+      <p>Foto mia</p>
+    </GlassCardGemi>
+  </div>
+  
+  <div class="div6">
+    <GlassCardGemi>
+      <h1>Card 4</h1>
+      <p>contacto</p>
+    </GlassCardGemi>
+  </div>
+  
+  <div class="div7">
+    <GlassCardGemi>
+      <h1>Card 5 - Grande</h1>
+      <p>projects</p>
+    </GlassCardGemi>
+  </div>
+</div>
   </body>
 </html>
 
@@ -58,7 +79,7 @@ import Grid from "../components/Grid.astro"
     gap: 8px;
     max-width: 1600px;
     width: 100%;
-    height: 800px;
+    height: 750px;
   }
     
   .div1 {
@@ -92,7 +113,6 @@ import Grid from "../components/Grid.astro"
     grid-row-start: 1;
   }
 
-  /* Hacer que las cards ocupen todo el espacio disponible */
   .div1, .div3, .div5, .div6, .div7 {
     display: flex;
   }
