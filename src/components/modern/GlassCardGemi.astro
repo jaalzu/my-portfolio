@@ -1,0 +1,132 @@
+---
+// GlassCard.astro - Componente limpio para usar con cualquier fondo.
+---
+
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <filter id="lensFilter">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blurred" />
+        <feColorMatrix in="blurred" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+        <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+</svg>
+
+<div class="glass-container glass-container--rounded glass-container--large">
+    <div class="glass-filter"></div>
+    <div class="glass-overlay"></div>
+    <div class="glass-specular"></div>
+    
+    <div class="glass-content">
+        <h1>Glassmorphism en Astro</h1>
+        <p>Este es un ejemplo del efecto "Cristal Líquido" que toma el fondo de la página.</p>
+        
+        <button class="glass-button">
+            ¡Haz Clic!
+        </button>
+    </div>
+</div>
+
+<style>
+    /* VARIABLES (ROOT) */
+    :root {
+        /* --lg-bg-color: rgba(255, 255, 255, 0.288); */
+        --lg-bg-color: rgba(43, 203, 206, 0.07);
+        --lg-highlight: rgba(255, 255, 255, 0.75);
+        --lg-text: #ffffff;
+        --lg-red: #6CFF9D;
+        --lg-grey: #444739;
+    }
+
+    /* ESTILOS DE LA TARJETA (CARD) */
+    .glass-container {
+        position: relative;
+        display: flex;
+        /* Puedes ajustar el tamaño aquí */
+        width: 740px; 
+        height: 440px;
+        /* Fin de ajustes de tamaño */
+        align-items: center;
+        background: transparent;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+        color: var(--lg-text);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+    }
+
+    .glass-container--rounded {
+        border-radius: 3rem;
+    }
+
+    /* CAPAS DEL EFECTO CRISTAL */
+    .glass-filter,
+    .glass-overlay,
+    .glass-specular {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+    }
+
+    /* Filtro de desenfoque (el núcleo del glassmorphism) */
+    .glass-filter {
+        z-index: 0;
+        backdrop-filter: blur(0px);
+        filter: url(#lensFilter) saturate(200%) brightness(1.10); /* Aplicación del filtro SVG */
+    }
+
+    /* Capa de color base transparente */
+    .glass-overlay {
+        z-index: 1;
+        background: var(--lg-bg-color);
+    }
+
+    /* Capa de reflejo y brillo (la clave del "vidrio líquido") */
+    .glass-specular {
+        z-index: 2;
+        box-shadow: inset 1px 1px 0 var(--lg-highlight),
+                    inset 0 0 5px var(--lg-highlight);
+    }
+
+    /* Contenido de la tarjeta */
+    .glass-content {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column; 
+        flex: 1 1 auto;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 30px;
+        gap: 1rem;
+        color: var(--lg-grey); 
+    }
+    
+    .glass-content h1 {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    /* ESTILOS DEL BOTÓN (BUTTON) */
+    .glass-button {
+        background: var(--lg-red); 
+        color: var(--lg-text);
+        border: none;
+        border-radius: 9999px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 5px var(--lg-highlight);
+        transition: all 0.2s ease-in-out;
+        margin-top: 10px;
+    }
+
+    .glass-button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .glass-button:active {
+        transform: scale(0.98);
+        background: #d9375b; /* Rojo ligeramente más oscuro al presionar */
+    }
+</style>

@@ -2,71 +2,110 @@
  import Card from '../components/retro/Card.astro';
  import CardTech from '../components/retro/CardTech.astro';
  import ButtonLink from '../components/retro/ButtonLink.astro'
-import GlassCard from "../components/GlassCard.jsx";
 
 import Hero from "../components/Hero.jsx"
-import GlassButton from "../components/GlassButton.jsx"
-import GlassTechBox from "../components/GlassTechBox.jsx"
+import GlassButton from "../components/modern/GlassButton.jsx"
+import GlassTechBox from "../components/modern/GlassTechBox.jsx"
 
+import GlassCardGemi from '../components/modern/GlassCardGemi.astro';
+import Grid from "../components/Grid.astro"
 ---
-
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <title>Glass Components Demo</title>
+    <title>Glass Grid Demo</title>
   </head>
   <body>
-	<div class="container">
-			<GlassTechBox client:only="react">
-				react
-			</GlassTechBox>
-			
-		</div>
-		<div class="container">
-
-			<Hero client:only="react" />
-		</div>
-
-    
-
-
-		<GlassButton client:only="react">
-  Continuar
-</GlassButton>
-
+    <div class="parent">
+      <div class="div1">
+        <GlassCardGemi />
+      </div>
+      <div class="div3">
+        <GlassCardGemi />
+      </div>
+      <div class="div5">
+        <GlassCardGemi />
+      </div>
+      <div class="div6">
+        <GlassCardGemi />
+      </div>
+      <div class="div7">
+        <GlassCardGemi />
+      </div>
+    </div>
   </body>
-</html> 
-
+</html>
 
 <style>
   body {
     margin: 0;
-	padding: 0;
-	max-width: 1200px;
-	min-height: 100vh;
-	margin: auto;
+    padding: 0;
+    min-height: 100vh;
     background: url('/windows_xp_46.jpg') center/cover no-repeat fixed;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: white;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-  h2 {
-    margin: 0 0 16px 0;
-    font-size: 2rem;
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  p {
-    margin: 0 0 20px 0;
-    color: #fff;
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 1600px;
+    width: 100%;
+    height: 800px;
+  }
+    
+  .div1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+  }
+
+  .div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+
+  .div5 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+
+  .div6 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
+
+  .div7 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 4;
+    grid-row-start: 1;
+  }
+
+  /* Hacer que las cards ocupen todo el espacio disponible */
+  .div1, .div3, .div5, .div6, .div7 {
+    display: flex;
+  }
+
+  .div1 :global(.glass-container),
+  .div3 :global(.glass-container),
+  .div5 :global(.glass-container),
+  .div6 :global(.glass-container),
+  .div7 :global(.glass-container) {
+    width: 100%;
+    height: 100%;
   }
 </style>
-
 
 
 <!-- <div class="container">

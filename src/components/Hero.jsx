@@ -9,7 +9,7 @@ export default function Hero() {
       color="#ffffff20"
     >
       <div className="hero">
-        <h1>Reactee</h1>
+        <h1>React</h1>
       </div>
     </GlassFilter>
   );
