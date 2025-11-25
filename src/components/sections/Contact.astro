@@ -1,0 +1,59 @@
+---
+import Card from '../retro/Card.astro';
+import ButtonLink from '../retro/ButtonLink.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Card>
+  <h2 >Let’s have a talk!</h2>
+
+  <p class="email">javalzu@gmail.com</p>
+
+  <div class="buttons">
+    <ButtonLink width={180} height={45} borderRadius={50}>
+      <a href="https://github.com/javalzu" target="_blank" class="btn-content">
+        <Icon name="devicon:github" width="24" height="24" />
+        <span>GitHub</span>
+      </a>
+    </ButtonLink>
+
+    <ButtonLink width={180} height={45} borderRadius={50}>
+      <a href="https://www.linkedin.com/in/tu-link" target="_blank" class="btn-content">
+        <Icon name="devicon:linkedin" width="24" height="24" />
+        <span>LinkedIn</span>
+      </a>
+    </ButtonLink>
+  </div>
+</Card>
+
+<style>
+  h2 {
+    font-size: 1.6rem;
+    color: #ebfff2;
+    margin-bottom: 5rem;
+  }
+
+  .email {
+    text-align: center;
+                color: #6CFF9D;
+    font-size: 1.7rem;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    gap: 1rem;              
+  }
+
+  .btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+  }
+</style>

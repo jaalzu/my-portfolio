@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon/components'
+import Card from '../retro/Card.astro';
+import CardTech from '../retro/CardTech.astro';
+---
+
+<Card>
+  <h2>Alguna de las tecnologías con las que trabajo!</h2>
+    <div class="tech-grid"> 
+    <CardTech title="HTML5">
+      <Icon name="devicon:html5" width="50" height="50" color="#E34F26" />
+    </CardTech>
+
+     <CardTech title="CSS3">
+      <Icon name="devicon:css3" width="50" height="50" color="#1572B6" />
+    </CardTech>
+
+    <CardTech title="JavaScript">
+      <Icon name="devicon:javascript" width="50" height="50" color="#F7DF1E" />
+    </CardTech>
+
+    <CardTech title="React">
+      <Icon name="devicon:react" width="50" height="50" color="#61DAFB" />
+    </CardTech>
+    
+    <CardTech title="Git">
+      <Icon name="devicon:git" width="50" height="50" color="#F05032" />     </CardTech>
+  
+    <CardTech title="Tailwind CSS">
+      <Icon name="devicon:tailwindcss" width="50" height="50" color="#06B6D4" />
+    </CardTech>
+
+    <CardTech title="TypeScript">
+      <Icon name="devicon:typescript" width="50" height="50" color="#3178C6" />
+    </CardTech>
+
+    <CardTech title="Sass/Less">
+      <Icon name="devicon:sass" width="50" height="50" color="#CC6699" />
+    </CardTech>
+
+        <CardTech title="Supabase">
+      <Icon name="devicon:supabase" width="50" height="50" color="#3ECF8E" />     </CardTech>
+
+    <CardTech title="NextJs">
+      <Icon name="devicon:nextjs" width="50" height="50" color="#000000" />     </CardTech>
+
+    <CardTech title="Figma">
+      <Icon name="devicon:figma" width="50" height="50" color="#A259FF" />     </CardTech>
+
+    <CardTech title="Astro">
+      <Icon name="devicon:astro" width="50" height="50" color="#FF5D01" />     </CardTech>
+  </div>
+</Card>
+
+<style>
+h2{
+    font-size: 1.5rem;
+      color: #ebfff2;
+  margin-bottom: 2rem;
+}
+    .tech-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 2rem;
+  row-gap: 1rem;
+  justify-items: center;        /* CENTRA horizontal */
+  align-items: start;           /* evita que las tarjetas se estiren raro */
+}
+</style> 

@@ -3,7 +3,7 @@
   position: relative;
   background: linear-gradient(
     180deg,
-    rgba(103, 108, 112, 0.3) 30%,
+    rgba(45, 48, 51, 0.191) 30%,
     rgba(22, 22, 22, 0.3) 50%,
     rgba(0, 0, 0, 0.2) 90%,
     rgba(62, 65, 67, 0.3) 100%
@@ -41,7 +41,6 @@
 
 .glass-container {
   padding: 16px;
-  box-sizing: border-box; /* AÑADE ESTO */
 }
 
 .glass-button:hover::before {

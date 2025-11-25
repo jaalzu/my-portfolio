@@ -1,53 +1,30 @@
 ---
- import Card from '../components/retro/Card.astro';
- import CardTech from '../components/retro/CardTech.astro';
- import GlassCardGemi from '@/components/modern/GlassCardGemi.astro';
----
+import Projects from '../components/sections/Projects.astro';
+import AboutMe from '../components/sections/AboutMe.astro';
+import Picture from '../components/sections/Picture.astro';
+import Contact from '../components/sections/Contact.astro';
+import TechStack from '../components/sections/TechStack.astro';
 
+---
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+   <link rel="stylesheet" href="/src/styles/global.css">
+
     <meta name="viewport" content="width=device-width" />
     <title>Mi Portfolio</title>
   </head>
   <body>
     <div class="parent">
-<div class="projects"> 
- <Card>
-   <h1>foto</h1>
-   <p>Descripción sobre mí</p>
-  </Card>
-</div>
-<div class="about-me"> 
-  <Card>
-   <h1>Card 1</h1>
-          <p>Contenido 2</p>
-        </Card>
-</div>
-
-<div class="picture"> 
- <Card>
-          <h1>Card 2</h1>
-          <p>Contenido 2</p>
-        </Card>
-</div>
-<div class="contact"> 
- <Card>
-          <h1>Card 2</h1>
-          <p>Contenido 2</p>
-        </Card>
-</div>
-<div class="tech-stack"> 
- <Card>
-          <h1>Card 2</h1>
-          <p>Contenido 2</p>
-        </Card>
-</div>
-</div>
-   
+      <div class="projects"><Projects /></div>
+      <div class="about-me"><AboutMe /></div>
+      <div class="picture"><Picture /></div>
+      <div class="contact"><Contact /></div>
+      <div class="tech-stack"><TechStack /></div>
+    </div>
   </body>
 </html>
+
 
 <style>
   body {
@@ -55,28 +32,41 @@
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh;
-    background: url('/windows_xp_46.jpg') center/cover no-repeat fixed;
+    background: url('/windows_xp_46.jpg') bottom/cover no-repeat fixed;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: white;
+    color: #F2FFF4;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  
   .parent {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(4, 1fr);
-grid-column-gap: 20px;
-grid-row-gap: 20px;
-width: 100%;
-max-width: 1600px;
-height: 90vh;
+    display: grid;
+    grid-template-columns: 2.2fr 0.9fr 0.7fr 1fr; 
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    width: 100%;
+    max-width: 1650px;
+    height: 90vh;
+  }
 
-}
+  .projects { grid-area: 1 / 3 / 5 / 5; }
+  .about-me { grid-area: 1 / 1 / 3 / 2; }
+  .picture { grid-area: 1 / 2 / 3 / 3; }
+  .contact { grid-area: 3 / 2 / 5 / 3; }
+  .tech-stack { grid-area: 3 / 1 / 5 / 2; }
 
-.projects { grid-area: 1 / 4 / 5 / 6; }
-.about-me { grid-area: 1 / 1 / 3 / 3; }
-.picture { grid-area: 1 / 3 / 3 / 4; }
-.contact { grid-area: 3 / 3 / 5 / 4; }
-.tech-stack { grid-area: 3 / 1 / 5 / 3; }
+  .projects, .about-me, .picture, .contact, .tech-stack {
+    display: flex;
+  }
+
+  .projects :global(.glass-card),
+  .about-me :global(.glass-card),
+  .picture :global(.glass-card),
+  .contact :global(.glass-card),
+  .tech-stack :global(.glass-card) {
+    width: 100%;
+    height: 100%;
+  }
 </style>
