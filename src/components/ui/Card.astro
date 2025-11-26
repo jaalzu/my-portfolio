@@ -1,6 +1,6 @@
 ---
 import '../../styles/glassRetro.css';
-const { width = '100%', height = '100%', borderRadius = 40 } = Astro.props;
+const { width = '100%', height = 'auto', borderRadius = 40 } = Astro.props;
 ---
 
 <div class="glass-base glass-card" style={`width: ${width}; height: ${height}; border-radius: ${borderRadius}px;`}>
@@ -9,7 +9,6 @@ const { width = '100%', height = '100%', borderRadius = 40 } = Astro.props;
 
 <style>
   .glass-card {
-    /* padding: .6rem 1.250rem; */
     display: flex;
     flex-direction: column;
     align-items: center;

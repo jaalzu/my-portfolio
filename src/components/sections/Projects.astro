@@ -1,8 +1,67 @@
 ---
-import Card from '../retro/Card.astro';
+import ProjectsCard from '../ui/ProjectsCard.astro';
+import Card from '../ui/Card.astro';
+
+// Ejemplos demo
+const projects = [
+  {
+    title: "Weather App",
+    description: "App del clima hecha con Astro + API pública.",
+    image: "/dark-bg.jpg",
+    demoUrl: "https://weather-demo.com",
+    codeUrl: "https://github.com/noname/weather"
+  },
+  {
+    title: "Todo Manager",
+    description: "Administrador de tareas con UI retro y glass.",
+    image: "/dark-bg.jpg",
+    demoUrl: "https://todo-demo.com",
+    codeUrl: "https://github.com/noname/todo"
+  },
+  {
+    title: "Portfolio 2025",
+    description: "Mi portfolio hecho con Astro y efectos retro.",
+    image: "/dark-bg.jpg",
+    demoUrl: "https://portfolio-demo.com",
+    codeUrl: "https://github.com/noname/portfolio"
+  }
+];
 ---
-<Card>
-  <h1>Projects</h1>
-  <p>Mis proyectos destacados</p>
-  
+
+<Card width="100%" height="auto">
+  <div class="projects-grid">
+    {projects.map(p => (
+      <ProjectsCard 
+        image={p.image}
+        title={p.title}
+        description={p.description}
+        demoUrl={p.demoUrl}
+        codeUrl={p.codeUrl}
+      />
+    ))}
+  </div>
 </Card>
+
+<style>
+.projects-grid {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  border-radius: 24px;
+  grid-template-columns: 1fr;
+}
+
+
+@media (max-width: 800px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
