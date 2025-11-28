@@ -10,7 +10,7 @@
   );
   box-shadow: 
     0px 7px 10px rgba(0, 0, 0, 0.3),
-    inset 0px 10px 10px rgba(121, 255, 253, 0.178),
+    inset 0px 10px 10px rgba(121, 255, 253, 0.131),
     inset 0px -2px 1px rgba(0, 0, 0, 0.4);
   border-radius: 13px;
   box-sizing: border-box; /* AÑADE ESTO */
@@ -39,9 +39,9 @@
   pointer-events: none;
 }
 
-.glass-container {
+/* .glass-container {
   padding: 16px;
-}
+} */
 
 .glass-button:hover::before {
   opacity: 1;
@@ -54,7 +54,7 @@
 
 
 .glass-button {
-  padding: 12px 24px;
+  /* padding: 12px 24px; */
   cursor: pointer;
   transition: transform 0.2s ease;
 }
