@@ -2,11 +2,11 @@
 .glass-base {
   position: relative;
   background: linear-gradient(
-    180deg,
-    rgba(45, 48, 51, 0.191) 30%,
-    rgba(22, 22, 22, 0.3) 50%,
-    rgba(0, 0, 0, 0.2) 90%,
-    rgba(62, 65, 67, 0.3) 100%
+     180deg,
+    rgba(45, 51, 48, 0.134) 30%,
+    rgba(22, 22, 22, 0.207) 50%,
+    rgba(0, 0, 0, 0.152) 90%,
+    rgba(62, 65, 67, 0.18) 100% 
   );
   box-shadow: 
     0px 7px 10px rgba(0, 0, 0, 0.3),
@@ -14,6 +14,7 @@
     inset 0px -2px 1px rgba(0, 0, 0, 0.4);
   border-radius: 13px;
   box-sizing: border-box; /* AÑADE ESTO */
+
 }
 
 /* Efecto hover SOLO para botones */
@@ -39,10 +40,6 @@
   pointer-events: none;
 }
 
-/* .glass-container {
-  padding: 16px;
-} */
-
 .glass-button:hover::before {
   opacity: 1;
 }
@@ -52,9 +49,7 @@
   z-index: 2;
 }
 
-
 .glass-button {
-  /* padding: 12px 24px; */
   cursor: pointer;
   transition: transform 0.2s ease;
 }

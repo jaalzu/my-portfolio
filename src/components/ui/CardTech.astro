@@ -1,6 +1,5 @@
 ---
 import '../../styles/glassRetro.css';
-
 const { title, width = 80, height = 80, borderRadius = 24 } = Astro.props;
 ---
 
@@ -45,26 +44,3 @@ const { title, width = 80, height = 80, borderRadius = 24 } = Astro.props;
 
 
 
-
-
-<!-- ---
-import '../../styles/glassRetro.css';
-const { width = 80, height = 80, borderRadius = 24 } = Astro.props;
----
-
-<div class="glass-base glass-image-container" style={`width: ${width}px; height: ${height}px; border-radius: ${borderRadius}px;`}>
-  <slot />
-</div>
-
-<style>
-  .glass-image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .glass-image-container :global(svg),
-  .glass-image-container :global(img) {
-    object-fit: contain;
-  }
-</style> -->
