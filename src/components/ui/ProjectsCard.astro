@@ -2,10 +2,10 @@
 import '../../styles/glassRetro.css';
 import ButtonLink from '../ui/ButtonLink.astro';
 
+
 const {
   title = "Proyecto sin título",
   description = "Descripción no disponible.",
-  image = "",
   projectUrl = "#",
   codeUrl = "#",
 } = Astro.props;
@@ -17,70 +17,42 @@ const {
 <div
   class="glass-base project-card"
 >
-  <div class="img-container">
-    <img src={image} alt={title} loading="lazy" />
-    <div class="actions">
-      <ButtonLink width={117} height={26} href={projectUrl} variant="primary">Ver Proyecto</ButtonLink>
-
-
-      <ButtonLink width={117} height={26} href={codeUrl} variant="secondary">Ver Código</ButtonLink>
+    <div class="info">
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
-</div>
+    <div class="actions">
+      <ButtonLink width={117} height={30} href={projectUrl} variant="primary">Ver Proyecto</ButtonLink>
 
-  <div class="info">
-    <h3>{title}</h3>
-    <p>{description}</p>
-  </div>
+
+      <ButtonLink width={117} height={30} href={codeUrl} variant="secondary">Ver Código</ButtonLink>
+    </div>
 </div>
 
 <style>
 .project-card {
     display: flex;
     flex-direction: column;
-    border-radius: 38px;
+    border-radius: 28px;
+  padding: .8rem 1.1rem;
+    background: linear-gradient(
+     180deg,
+    rgba(45, 51, 48, 0.230) 20%,
+    rgba(22, 22, 22, 0.230) 50%,
+    rgba(0, 0, 0, 0.230) 100%,
+    rgba(26, 28, 28, 0.230) 100% 
+  );
       box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.207), 
               inset 0px 4px 4px rgba(121, 255, 253, 0.178),
               inset 0px -1px 1px rgba(0, 0, 0, 0);
-              border: 1px solid rgba(255, 255, 255, 0.124);
+              border: 1px solid rgba(255, 255, 255, 0.186);
 }
-
- .img-container {
-  width: 100%;
-  height: 95px;      
-  position: relative;
-  border-top-left-radius: 38px;
-  overflow: hidden;
-  border-top-right-radius: 38px;
-}
-
-.img-container img {
-  border-top-left-radius: 38px;
-  border-top-right-radius: 38px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-  .actions {
-    position: absolute;
-    bottom: 6px;
-    left: -15px;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .info{
-    padding-left: .6rem;
-  }
   
 .info h3{
     margin-top: .5rem;
     margin-bottom: .350rem;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--color-primary);
-
-
 }
 .info p{
     margin-top:0 ;

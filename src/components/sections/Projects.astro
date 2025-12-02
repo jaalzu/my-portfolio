@@ -6,22 +6,19 @@ import Card from '../ui/Card.astro';
 const projects = [
   {
     title: "Courses WebApp",
-    description: "Plataforma de cursos online desarollada con Next,React,Tailwind y Supabase, con login seguro, control de acceso, sesiones en video, y administración de cursos.",
-    image: "/light-bg.jpg",
+    description: "Plataforma e-Learning desarrollada con Next.js, React, Tailwind CSS y Supabase. La interfaz usa Shadcn UI y React. Zustand gestiona el estado global. Supabase (Auth + DB) provee login seguro, control de acceso y almacenamiento de videos. Incluye consumo de sesiones y administración (CRUD) de cursos.",
     demoUrl: "https://weather-demo.com",
     codeUrl: "https://github.com/noname/weather"
   },
   {
     title: "RealTime colors",
-    description: "Plataforma de cursos online desarollada con Next,React,Tailwind y Supabase, con login seguro, control de acceso, sesiones en video, y administración de cursos.",
-    image: "/light-bg.jpg",
+    description: "Aplicación web para la creación y visualización de paletas de colores en tiempo real. Desarrollada con Astro y React para una entrega rápida y componentes interactivos. Los estilos se gestionan con Tailwind CSS. El estado de los colores utiliza React Context y useReducer para la gestión global, permitiendo previsualizaciones instantáneas en toda la página.",
     demoUrl: "https://todo-demo.com",
     codeUrl: "https://github.com/noname/todo"
   },
   {
     title: "Portfolio 2025",
-    description: "Plataforma de cursos online desarollada con Next,React,Tailwind y Supabase, con login seguro, control de acceso, sesiones en video, y administración de cursos.",
-    image: "/light-bg.jpg",
+    description: "Dashboard de gestión y seguimiento de criptomonedas. La aplicación consume datos en tiempo real de APIs externas utilizando Axios. Para una gestión eficiente del estado de datos se implementa TanStack Query, logrando una aplicación súper rápida con datos siempre frescos. La interfaz de usuario es construida con Material UI (MUI), proporcionando un diseño limpio y profesional con componentes preconstruidos.",
     demoUrl: "https://portfolio-demo.com",
     codeUrl: "https://github.com/noname/portfolio"
   }
@@ -32,7 +29,6 @@ const projects = [
   <div class="projects-grid">
     {projects.map(p => (
       <ProjectsCard 
-        image={p.image}
         title={p.title}
         description={p.description}
         demoUrl={p.demoUrl}
@@ -47,9 +43,9 @@ const projects = [
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.2rem;
-  padding-inline: 1.1rem;
-  padding-block: 1.5rem;
+  gap: 1.3rem;
+  padding-inline: 1.2rem;
+  padding-block: 1.3rem;
 }
 
 

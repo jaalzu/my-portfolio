@@ -3,9 +3,9 @@
   position: relative;
   background: linear-gradient(
      180deg,
-    rgba(45, 51, 48, 0.134) 30%,
+    rgba(45, 51, 48, 0.200) 30%,
     rgba(22, 22, 22, 0.207) 50%,
-    rgba(0, 0, 0, 0.152) 90%,
+    rgba(0, 0, 0, 0.200) 90%,
     rgba(62, 65, 67, 0.18) 100% 
   );
   box-shadow: 
@@ -13,7 +13,7 @@
     inset 0px 10px 10px rgba(121, 255, 253, 0.131),
     inset 0px -2px 1px rgba(0, 0, 0, 0.4);
   border-radius: 13px;
-  box-sizing: border-box; /* AÑADE ESTO */
+  box-sizing: border-box; 
 
 }
 

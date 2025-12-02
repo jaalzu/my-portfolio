@@ -1,0 +1,29 @@
+/* Card con efecto glass */
+.glass {
+  background: rgba(0, 0, 0, 0.297);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #b5b5b580;
+}
+
+
+.buttonGlass {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid #d3d3d38f;
+  box-shadow: 
+    0 4px 5px rgba(0, 0, 0, 0.082),
+    inset 0 30px 35px rgba(255, 255, 255, 0.114); 
+  cursor: pointer;
+  display: inline-flex;
+  color: var(--color-white-pure);
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonGlass:hover {
+  background-color: rgba(255, 255, 255, 0.112);
+  box-shadow: 
+    inset 0 40px 35px rgba(255, 255, 255, 0.15);
+}
+
