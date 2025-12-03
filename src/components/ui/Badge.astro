@@ -1,0 +1,20 @@
+---
+const { text } = Astro.props;
+---
+
+<span class="badge-glass">
+  {text}
+</span>
+
+<style>
+.badge-glass {
+  display: inline-block;
+  padding: 0.350em 0.850em;
+  font-size: 0.730rem;
+  font-weight: 600;
+  border-radius: 15px;
+  color: var(--color-white-pure); 
+  background-color: rgba(0, 0, 0, 0.664); 
+  border: 1px solid rgba(255, 255, 255, 0.31);
+}
+</style>

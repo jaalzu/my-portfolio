@@ -3,16 +3,16 @@
   background: rgba(0, 0, 0, 0.297);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid #b5b5b580;
+  border: 1px solid #b5b5b58f;
 }
 
 
 .buttonGlass {
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(255, 255, 255, 0);
   border: 1px solid #d3d3d38f;
   box-shadow: 
     0 4px 5px rgba(0, 0, 0, 0.082),
-    inset 0 30px 35px rgba(255, 255, 255, 0.114); 
+    inset 0px 0px 80px rgba(255, 255, 255, 0.114); 
   cursor: pointer;
   display: inline-flex;
   color: var(--color-white-pure);
@@ -22,8 +22,8 @@
 }
 
 .buttonGlass:hover {
-  background-color: rgba(255, 255, 255, 0.112);
+  background-color: rgba(255, 255, 255, 0.082);
   box-shadow: 
-    inset 0 40px 35px rgba(255, 255, 255, 0.15);
+    inset 0 50px 35px rgba(255, 255, 255, 0.15);
 }
 

@@ -6,21 +6,25 @@ import Card from '../ui/Card.astro';
 const projects = [
   {
     title: "Courses WebApp",
-    description: "Plataforma e-Learning desarrollada con Next.js, React, Tailwind CSS y Supabase. La interfaz usa Shadcn UI y React. Zustand gestiona el estado global. Supabase (Auth + DB) provee login seguro, control de acceso y almacenamiento de videos. Incluye consumo de sesiones y administración (CRUD) de cursos.",
+    description: "Plataforma e-Learning con sistema de autenticación y control de acceso. Incluye gestión de estado global, almacenamiento de videos, consumo de sesiones y administración completa (CRUD) de cursos.",
     demoUrl: "https://weather-demo.com",
-    codeUrl: "https://github.com/noname/weather"
+    codeUrl: "https://github.com/noname/weather",
+    tech: ["Next.js", "Tailwindcss","React","Supabase","shadcn/ui","Zustand","Typescript"]
   },
   {
     title: "RealTime colors",
-    description: "Aplicación web para la creación y visualización de paletas de colores en tiempo real. Desarrollada con Astro y React para una entrega rápida y componentes interactivos. Los estilos se gestionan con Tailwind CSS. El estado de los colores utiliza React Context y useReducer para la gestión global, permitiendo previsualizaciones instantáneas en toda la página.",
+    description: "Aplicación web para crear y visualizar paletas de colores en tiempo real. Diseñada para ser rápida, fluida y totalmente interactiva. El estado global permite actualizar y previsualizar los colores al instante en toda la página, ofreciendo una experiencia visual precisa y dinámica.",
     demoUrl: "https://todo-demo.com",
-    codeUrl: "https://github.com/noname/todo"
+    codeUrl: "https://github.com/noname/todo",
+    tech: ["Astro", "React","Tailwindcss","Typescript"]
+
   },
   {
     title: "Portfolio 2025",
-    description: "Dashboard de gestión y seguimiento de criptomonedas. La aplicación consume datos en tiempo real de APIs externas utilizando Axios. Para una gestión eficiente del estado de datos se implementa TanStack Query, logrando una aplicación súper rápida con datos siempre frescos. La interfaz de usuario es construida con Material UI (MUI), proporcionando un diseño limpio y profesional con componentes preconstruidos.",
+    description: "Dashboard para la gestión y seguimiento de criptomonedas que consume datos en tiempo real de APIs externas, utilizando una gestión de estado optimizada para un rendimiento súper rápido y una interfaz de usuario limpia y profesional.",
     demoUrl: "https://portfolio-demo.com",
-    codeUrl: "https://github.com/noname/portfolio"
+    codeUrl: "https://github.com/noname/portfolio",
+    tech: ["Next.js", "React","Tailwindcss","Typescript","TanStack Query","Axios"]
   }
 ];
 ---
@@ -33,6 +37,8 @@ const projects = [
         description={p.description}
         demoUrl={p.demoUrl}
         codeUrl={p.codeUrl}
+            tech={p.tech}        // ← ESTA LÍNEA
+
       />
     ))}
   </div>
