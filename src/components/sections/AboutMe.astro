@@ -1,36 +1,70 @@
- ---
+---
 import Card from '../ui/Card.astro';
 import global from '../../styles/global.css'
 ---
 
 <Card>
     <div class="about-me">
+        <h2 class="name">Hi! My name is Javier Alzú.</h2>
+        <p class="subtitle">
+    25-year-old coffee addict from Argentina
+    <img src="/ar.svg" alt="Argentina flag" class="flag">
+</p>
+        <h1><span class="highlight">Frontend Developer</span> building pixel-perfect, engaging, and accessible digital experiences  crafted with <span class="tech">(clean/secure/optimized/scalable)</span> code.</h1>
+        <br>
+        <h1 class="commitment">Always committed to collaborating, learn, and improve myself every day, with strong attention to detail.</h1>
         
-        <h1 >I’m a Frontend Developer building pixel-perfect, engaging, and accessible digital experiences — crafted with <span>(clean/secure/optimized/scalable)</span> code. </h1>
-        
-        <p>Hi! I'm Javier Alzú, 25 years old, from Chaco, Argentina. As a self-taught developer, I've learned to figure things out, stay curious, and craft interfaces tailored to each project. I enjoy turning ideas into clean, functional web experiences and pushing myself a bit further with every build, whether it's refining a layout, improving performance, or exploring a new tool that helps me grow as a developer.</p>
     </div>
-    </Card>
+</Card>
+
+<style>
+    .about-me {
+        padding: .3rem 2rem;
+    }
+
+    .name {
+        font-size: 1.623rem; 
+        margin-bottom: 0;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        font-size: .930rem; 
+        margin-top: .1rem;
+        margin-bottom: .7rem;
+        color: #b5b5b5df; 
+        font-weight: 700;
+    }
+
+    .flag {
+    width: 22px;
+    margin-left: .150rem;
+    height: auto;
+    display: inline-block;
+}
     
-    <style>
 
-        .about-me{
-            padding: .4rem 1.250rem;
-        }
+    h1 {
+        font-size: 1.950rem;
+        line-height: 1.080;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
 
-        h1{
-            font-size: 2.2rem;
-            line-height: 1.080;
-        }
+    h1 .highlight {
+        color: var(--color-primary);
+    }
 
-        h1 span{
-              color: var(--color-primary);
+    h1 .tech {
+        color: var(--color-primary);
+    }
 
-        }
+    .commitment {
+        margin-bottom: 1.5rem;
+    }
 
-        p{
-            font-size: 1.2rem;
-         color: var(--color-white-light);
-        }
-
-</style> 
+    .bio {
+        font-size: 1.2rem;
+        color: var(--color-white-light);
+    }
+</style>
