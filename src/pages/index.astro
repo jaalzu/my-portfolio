@@ -4,6 +4,8 @@ import AboutMe from '../components/sections/AboutMe.astro';
 import Picture from '../components/sections/Picture.astro';
 import Contact from '../components/sections/Contact.astro';
 import TechStack from '../components/sections/TechStack.astro';
+import '../styles/global.css'
+import CustomCursor from '../components/ui/CustomCursor.tsx';
 
 ---
 <html lang="es">
@@ -15,7 +17,8 @@ import TechStack from '../components/sections/TechStack.astro';
     <title>Mi Portfolio</title>
   </head>
   <body>
-    <div class="parent">
+    <div class="parent">    <CustomCursor client:load />
+
  
       <div class="projects"><Projects /></div>
       <div class="about-me"><AboutMe /></div>

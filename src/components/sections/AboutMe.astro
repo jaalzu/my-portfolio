@@ -1,16 +1,38 @@
 ---
 import Card from '../ui/Card.astro';
 import global from '../../styles/global.css'
+import TypingAnimation  from "@/components/ui/Typing-animation"
+import DecryptedText from '@/components/ui/DecryptedText.tsx';
+
 ---
 
 <Card>
     <div class="about-me">
         <h2 class="name">Hi! My name is Javier Alzú.</h2>
-        <p class="subtitle">
+        <!-- <p class="subtitle">
     25-year-old coffee addict from Argentina
     <img src="/ar.svg" alt="Argentina flag" class="flag">
+</p> -->
+<p class="subtitle">
+  <DecryptedText 
+    client:load
+    originalText="25-year-old coffee addict from Argentina "
+    hoverText="Thanks for being here. Don't forget to check my projects!"
+    className=""
+  />
 </p>
-        <h1><span class="highlight">Frontend Developer</span> building pixel-perfect, engaging, and accessible digital experiences  crafted with <span class="tech">(clean/secure/optimized/scalable)</span> code.</h1>
+       <h1>
+    <span class="highlight">Frontend Developer</span> building pixel-perfect, engaging, and accessible digital experiences  crafted with 
+    <TypingAnimation 
+    client:load 
+    words={["clean", "secure", "optimized", "scalable"]}
+    duration={100}
+    className="tech"
+/> code.
+</h1>
+
+
+
         <br>
         <h1 class="commitment">Always committed to collaborating, learn, and improve myself every day, with strong attention to detail.</h1>
         
@@ -42,7 +64,10 @@ import global from '../../styles/global.css'
     height: auto;
     display: inline-block;
 }
-    
+
+.tech-animation {
+    color: var(--color-primary);
+}
 
     h1 {
         font-size: 1.950rem;
@@ -55,9 +80,6 @@ import global from '../../styles/global.css'
         color: var(--color-primary);
     }
 
-    h1 .tech {
-        color: var(--color-primary);
-    }
 
     .commitment {
         margin-bottom: 1.5rem;
