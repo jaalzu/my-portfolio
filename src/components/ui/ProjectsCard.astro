@@ -1,38 +1,46 @@
- ---
+---
 import '../../styles/glassRetro.css';
 import ButtonLink from '../ui/ButtonLink.astro';
 import Badge from './Badge.astro';
+import ProjectModal from './ProjectModal';
 
 const {
   title = "Proyecto sin título",
   description = "Descripción no disponible.",
   projectUrl = "#",
   codeUrl = "#",
-  tech = []  // ← NUEVO
+  tech = [],
+  modalData = {
+    image: "",
+    historia: "",
+    patrones: "",
+    stack: ""
+  }
 } = Astro.props;
-
 ---
 
-<div
-  class="glass-base project-card"
->
-    <div class="info">
-      <h3>{title}</h3>
-      <p>{description}</p>
+<div class="glass-base project-card">
+  <div class="info">
+    <h3>{title}</h3>
+    <p>{description}</p>
 
-        <div class="tech-list">
-  {tech.map(t => (
-    <Badge text={t} />
-  ))}
-</div>
+    <ProjectModal
+      client:load
+      title={title}
+      modalData={modalData}
+    />
+
+    <div class="tech-list">
+      {tech.map(t => (
+        <Badge text={t} />
+      ))}
     </div>
-  
-    <div class="actions">
-      <ButtonLink width={117} height={27} href={projectUrl} variant="primary">Ver Proyecto</ButtonLink>
+  </div>
 
-
-      <ButtonLink width={117} height={27} href={codeUrl} variant="secondary">Ver Código</ButtonLink>
-    </div>
+  <div class="actions">
+    <ButtonLink width={117} height={27} href={projectUrl} variant="primary">Ver Proyecto</ButtonLink>
+    <ButtonLink width={117} height={27} href={codeUrl} variant="secondary">Ver Código</ButtonLink>
+  </div>
 </div>
 
 <style>
@@ -40,7 +48,7 @@ const {
     display: flex;
     flex-direction: column;
     border-radius: 28px;
-  padding: .8rem 1.1rem;
+    padding: .3rem 1.1rem;
     background: linear-gradient(
      180deg,
     rgba(45, 51, 48, 0.230) 20%,
@@ -48,10 +56,10 @@ const {
     rgba(0, 0, 0, 0.230) 10%,
     rgba(26, 28, 28, 0.230) 30% 
   );
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.207), 
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.207), 
               inset 0px 4px 4px rgba(121, 255, 253, 0.178),
               inset 0px -1px 1px rgba(0, 0, 0, 0);
-              border: 1px solid rgba(255, 255, 255, 0.186);
+    border: 1px solid rgba(255, 255, 255, 0.186);
 }
   
 .info h3{
@@ -61,7 +69,8 @@ const {
     color: var(--color-primary);
 }
 .info p{
-    margin-top:0 ;
+    margin-top:0;
+    margin-bottom: .1rem;
     font-size: .980rem;
 }
 
@@ -71,5 +80,4 @@ const {
   flex-wrap: wrap;
   margin-block: 1rem;
 }
-
-</style> 
+</style>
