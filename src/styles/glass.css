@@ -10,20 +10,31 @@
 .buttonGlass {
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid #d3d3d38f;
-  box-shadow: 
+  box-shadow:
     0 4px 5px rgba(0, 0, 0, 0.082),
-    inset 0px 0px 80px rgba(255, 255, 255, 0.114); 
-  cursor: pointer;
+    inset 0px 0px 80px rgba(255, 255, 255, 0.114);
+  cursor: url('/cursor/cursor.cur'), pointer; /* cursor personalizado */
   display: inline-flex;
   color: var(--color-white-pure);
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease-in-out;
+  border-radius: 28px;
+  padding: 0.5rem 1rem;
+
+  /* MUY importante: que el efecto del click se note */
+  transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.2s ease;
 }
 
 .buttonGlass:hover {
   background-color: rgba(255, 255, 255, 0.082);
-  box-shadow: 
-    inset 0 50px 35px rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 50px 35px rgba(255, 255, 255, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.20);
 }
 
+.buttonGlass:active {
+  transform: scale(0.90); 
+}
