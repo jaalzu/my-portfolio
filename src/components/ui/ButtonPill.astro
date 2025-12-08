@@ -30,8 +30,12 @@ const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
       inset 0px 0px 80px rgba(255, 255, 255, 0.114) !important;
   }
 
+   .pillContainer:active {
+    transform: scale(1) !important;
+  }
+
   .pillButton {
-    padding: 0.4rem 0.95rem;
+    padding: 0.5rem 0.95rem;
     text-decoration: none;
     color: inherit;
     white-space: nowrap;
