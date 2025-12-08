@@ -1,0 +1,70 @@
+---
+interface Props {
+  projectUrl: string;
+  codeUrl: string;
+  infoUrl?: string;
+}
+
+const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
+---
+
+<div class="buttonGlass glass-base pillContainer">
+  <a href={projectUrl} class="pillButton pillButton--first">Sitio web</a>
+  <div class="divider"></div>
+  <a href={codeUrl} class="pillButton pillButton--middle">Código</a>
+  <div class="divider"></div>
+  <a href={infoUrl} class="pillButton pillButton--last">Información</a>
+</div>
+
+<style>
+  .pillContainer {
+    width: fit-content;
+    align-items: stretch !important;
+    padding: 0 !important;
+  }
+
+  .pillContainer:hover {
+    background-color: rgba(255, 255, 255, 0) !important;
+    box-shadow:
+      0 4px 5px rgba(0, 0, 0, 0.082),
+      inset 0px 0px 80px rgba(255, 255, 255, 0.114) !important;
+  }
+
+  .pillButton {
+    padding: 0.4rem 0.95rem;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    transition: background-color 0.2s ease;
+  }
+
+  .pillButton--first {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 28px;
+  }
+
+  .pillButton--last {
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  .pillButton:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .pillButton:active {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .divider {
+    width: 1px;
+    align-self: stretch;
+    background-color: rgba(211, 211, 211, 0.4);
+    margin: 0;
+  }
+</style>

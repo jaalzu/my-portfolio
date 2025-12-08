@@ -1,8 +1,7 @@
 ---
 import '../../styles/glassRetro.css';
-import ButtonLink from '../ui/ButtonLink.astro';
 import Badge from './Badge.astro';
-import ProjectModal from './ProjectModal';
+import ButtonPill from './ButtonPill.astro'
 
 const {
   title = "Proyecto sin título",
@@ -10,12 +9,6 @@ const {
   projectUrl = "#",
   codeUrl = "#",
   tech = [],
-  modalData = {
-    image: "",
-    historia: "",
-    patrones: "",
-    stack: ""
-  }
 } = Astro.props;
 ---
 
@@ -23,12 +16,6 @@ const {
   <div class="info">
     <h3>{title}</h3>
     <p>{description}</p>
-
-    <ProjectModal
-      client:load
-      title={title}
-      modalData={modalData}
-    />
 
     <div class="tech-list">
       {tech.map(t => (
@@ -38,8 +25,7 @@ const {
   </div>
 
   <div class="actions">
-    <ButtonLink width={117} height={27} href={projectUrl} variant="primary">Ver Proyecto</ButtonLink>
-    <ButtonLink width={117} height={27} href={codeUrl} variant="secondary">Ver Código</ButtonLink>
+    <ButtonPill projectUrl={projectUrl} codeUrl={codeUrl} infoUrl="/info" />
   </div>
 </div>
 
@@ -47,8 +33,9 @@ const {
 .project-card {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     border-radius: 28px;
-    padding: .3rem 1.1rem;
+    padding: .5rem 1rem;
     background: linear-gradient(
      180deg,
     rgba(45, 51, 48, 0.230) 20%,
@@ -61,23 +48,35 @@ const {
               inset 0px -1px 1px rgba(0, 0, 0, 0);
     border: 1px solid rgba(255, 255, 255, 0.186);
 }
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
   
 .info h3{
-    margin-top: .5rem;
-    margin-bottom: .350rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--color-primary);
-}
+  margin-top: .4rem;
+  margin-bottom: .4rem;
+  }
+
 .info p{
-    margin-top:0;
-    margin-bottom: .1rem;
-    font-size: .980rem;
+  font-size: .920rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .tech-list {
   display: flex;
   gap: .3rem;
   flex-wrap: wrap;
-  margin-block: 1rem;
+  margin-top: 0.7rem;
+}
+
+.actions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

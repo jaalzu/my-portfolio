@@ -35,6 +35,7 @@
     0 3px 6px rgba(0, 0, 0, 0.20);
 }
 
+
 .buttonGlass:active {
-  transform: scale(0.90); 
+  transform: scale(0.96); 
 }
