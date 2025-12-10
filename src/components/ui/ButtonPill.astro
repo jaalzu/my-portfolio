@@ -1,7 +1,4 @@
 ---
-import ExternalLinkIcon from '../icons/externalLinkIcon.astro'; 
-import GitHubIcon from '../icons/GitHubIcon.astro';         
-import InfoIcon from '../icons/InfoIcon.astro';
 
 interface Props {
   projectUrl: string;
@@ -21,7 +18,7 @@ const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
       height="25" 
       viewBox="0 0 24 24" 
       fill="none" 
-      stroke="currentColor" 
+      stroke="#6CFF9D" 
       stroke-width="2" 
       stroke-linecap="round" 
       stroke-linejoin="round"
@@ -42,7 +39,7 @@ const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
       width="25" 
       height="25" 
       viewBox="0 0 24 24" 
-      fill="currentColor" 
+      fill="#6CFF9D" 
       xmlns="http://www.w3.org/2000/svg"
       class="icon-spacer"
       aria-label="Código en GitHub"
@@ -61,7 +58,7 @@ const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
       height="25" 
       viewBox="0 0 24 24" 
       fill="none" 
-      stroke="currentColor" 
+      stroke="#6CFF9D" 
       stroke-width="2" 
       stroke-linecap="round" 
       stroke-linejoin="round"
@@ -98,7 +95,7 @@ const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
   }
 
   .pillButton {
-    padding: 0.5rem 0.95rem;
+    padding: 0.5rem 1.2rem;
     text-decoration: none;
     color: inherit;
     white-space: nowrap;
