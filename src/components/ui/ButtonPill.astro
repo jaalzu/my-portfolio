@@ -3,15 +3,15 @@
 interface Props {
   projectUrl: string;
   codeUrl: string;
-  infoUrl?: string;
+  info?: string;
 }
 
-const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
+const { projectUrl, codeUrl, info = "#" } = Astro.props;
 ---
 
 <div class="buttonGlass glass-base pillContainer">
   
-  <a href={infoUrl} target="_blank" rel="noopener noreferrer" class="pillButton pillButton--first">
+  <a href={projectUrl} target="_blank" rel="noopener noreferrer" class="pillButton pillButton--first">
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
       width="25" 
@@ -51,7 +51,7 @@ const { projectUrl, codeUrl, infoUrl = "#" } = Astro.props;
   
   <div class="divider"></div>
 
-  <a href={infoUrl} class="pillButton pillButton--last">
+  <a href={info} class="pillButton pillButton--last">
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
       width="25" 

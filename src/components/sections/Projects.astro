@@ -2,26 +2,26 @@
 import ProjectsCard from '../ui/ProjectsCard.astro';
 import Card from '../ui/Card.astro';
 
-// Ejemplos demo
 const projects = [
   {
     title: "Courses WebApp",
     description: "Plataforma e-Learning con sistema de autenticación y control de acceso. Incluye gestión de estado global, almacenamiento de videos, consumo de sesiones y administración completa (CRUD) de cursos.",
-    demoUrl: "https://weather-demo.com",
+        projectUrl: "https://courses-demo.com",     
     codeUrl: "https://github.com/noname/weather",
     tech: ["Next.js", "Tailwindcss","React","Supabase","Typescript"],
   },
   {
     title: "RealTime colors",
     description: "Aplicación web para crear y visualizar paletas de colores en tiempo real. El estado global permite actualizar y previsualizar los colores al instante en toda la página, ofreciendo una experiencia visual precisa y dinámica.",
-    demoUrl: "https://todo-demo.com",
+        projectUrl: "https://courses-demo.com",     
     codeUrl: "https://github.com/noname/todo",
     tech: ["Astro", "React","Tailwindcss","Typescript"]
   },
   {
     title: "Portfolio 2025",
     description: "Dashboard para la gestión y seguimiento de criptomonedas que consume datos en tiempo real de APIs externas, utilizando una gestión de estado optimizada para un rendimiento súper rápido y una interfaz de usuario limpia y profesional.",
-    demoUrl: "https://portfolio-demo.com",
+            projectUrl: "https://courses-demo.com",    
+
     codeUrl: "https://github.com/noname/portfolio",
     tech: ["Next.js", "React","Tailwindcss","Typescript","TanStack Query","Axios"]
   }
@@ -32,13 +32,12 @@ const projects = [
   <div class="projects-grid">
     {projects.map(p => (
       <ProjectsCard 
-        title={p.title}
-        description={p.description}
-        demoUrl={p.demoUrl}
-        codeUrl={p.codeUrl}
-            tech={p.tech}        
-
-      />
+         title={p.title}
+         description={p.description}
+         projectUrl={p.projectUrl}  
+         codeUrl={p.codeUrl}        
+         tech={p.tech}
+/>
     ))}
   </div>
 </Card>
