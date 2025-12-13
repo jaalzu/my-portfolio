@@ -58,20 +58,32 @@ const uniqueId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
 <div id={uniqueId} class="modal-overlay">
   <div class="modal-content glass-base">
     <button class="modal-close" aria-label="Cerrar modal">
-      <svg 
+      <!-- <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        width="24" 
-        height="24" 
-        viewBox="0 0 24 24" 
+        width="34" 
+        height="34" 
+        viewBox="0 0 14 14" 
         fill="none" 
         stroke="currentColor" 
-        stroke-width="2" 
+        stroke-width="1" 
         stroke-linecap="round" 
         stroke-linejoin="round"
       >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
+      </svg> -->
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="4"
+  stroke-linecap="round"
+>
+  <line x1="6" y1="6" x2="18" y2="18" />
+  <line x1="18" y1="6" x2="6" y2="18" />
+</svg>
+
     </button>
 
 
@@ -195,8 +207,6 @@ background: linear-gradient(
   #043db8a0 50%, 
   #00bbfa20 100%  
 ); 
-
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -204,7 +214,7 @@ background: linear-gradient(
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  padding: 2rem;
+  padding: .8rem;
 }
 
 .modal-overlay.active {
@@ -215,26 +225,18 @@ background: linear-gradient(
 .modal-content {
   width: 100%;
   max-width: 700px;
-  max-height: 79vh;
+  max-height: 80vh;
   overflow-y: auto;
-  border-radius: 20px;
-  padding: 1rem;
+  border-radius: 32px;
+  padding: 2rem;
   position: relative;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.771) 0%,
-    rgba(22, 22, 22, 0.939) 70%,
-    rgba(0, 0, 0, 0.961) 100%,
-    rgba(18, 19, 19, 0.547) 100% 
+    rgba(0, 0, 0, 0.907) 0%,
+    rgba(22, 22, 22, 0.846) 70%,
+    rgba(0, 0, 0, 0.906) 100%,
+    rgba(1, 22, 22, 0.501) 100% 
   );
-  /* background: linear-gradient(
- 
-    180deg,
-    rgba(45, 51, 48, 0.663) 20%,
-    rgba(22, 22, 22, 0.85) 60%,
-    rgba(0, 0, 0, 0.85) 10%,
-    rgba(26, 28, 28, 0.85) 30% 
-  ); */
 
   transform: scale(0.3);
   transition: transform 0.3s ease;
@@ -246,48 +248,37 @@ background: linear-gradient(
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  top: 0rem;
+  right: 1.5rem;
+  background: transparent;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  border: none;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: var(--color-primary, #6CFF9D);
+  color: red;
   z-index: 10;
 }
 
 .modal-close svg {
-  width: 20px;
-  height: 20px;
+  width: 36px;
+  height: 36px;
 }
 
 .modal-close:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.modal-header {
-  margin-bottom: 1rem;
-}
-
-.modal-header h2 {
-  font-size: 1.3rem;
-  color: var(--color-primary, #6CFF9D);
-  margin-block: .5rem;
-}
-
 .modal-image {
   width: 100%;
   height: 150px;
-  border-radius: 12px;
+  border-radius: 5px;
   overflow: hidden;
-  margin-bottom: .9rem;
-  border: 1px solid rgba(255, 255, 255, 0.166);
+  margin-bottom: .5rem;
 }
 
 .modal-image img {
@@ -299,23 +290,20 @@ background: linear-gradient(
 .modal-body {
   display: flex;
   flex-direction: column;
-  gap: .2rem;
 }
 
 .modal-section h3 {
   font-size: 1.1rem;
   color: var(--color-primary, #6CFF9D);
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom:0rem;
 }
 
 .modal-section p {
   font-size: 0.9rem;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.9);
-
 }
 
-/* Scrollbar personalizada */
 .modal-content::-webkit-scrollbar {
   width: 4px;
   height: 100%;
@@ -323,13 +311,12 @@ background: linear-gradient(
 
 .modal-content::-webkit-scrollbar-track {
   border-radius: 10px;
-  margin-top: 1rem;
+  margin-block: 1.5rem;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-  /* background: rgba(108, 255, 157, 0.3); */
   background: rgba(108, 255, 157, 0.3);
-  border-radius: 10px;
+  border-radius: px;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
