@@ -46,3 +46,14 @@ select,
 [role="button"] {
   cursor: url('/cursor/cursor.cur'), pointer;
 }
+
+
+::selection {
+  background: var(--color-primary);
+  color: black;
+}
+
+::-moz-selection {
+  background: var(--color-primary);
+  color: black;
+}

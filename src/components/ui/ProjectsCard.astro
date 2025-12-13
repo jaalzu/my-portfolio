@@ -9,12 +9,13 @@ interface Props {
   projectUrl?: string; 
   codeUrl?: string;
   tech?: string[];
-  projectInfo?: {
-    origin: string;
-    architecture: string;
-    stack: string;
-    image?: string;
-  };
+ projectInfo?: {
+  origin: string;
+  architecture: string;
+  stack: string;
+  images?: string[];
+};
+
 }
 
 const {
@@ -55,23 +56,9 @@ const uniqueId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
 </div>
 
 <!-- Modal -->
-<div id={uniqueId} class="modal-overlay">
+<div id={uniqueId} class="modal-overlay ">
   <div class="modal-content glass-base">
     <button class="modal-close" aria-label="Cerrar modal">
-      <!-- <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="34" 
-        height="34" 
-        viewBox="0 0 14 14" 
-        fill="none" 
-        stroke="currentColor" 
-        stroke-width="1" 
-        stroke-linecap="round" 
-        stroke-linejoin="round"
-      >
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg> -->
       <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"
@@ -86,13 +73,31 @@ const uniqueId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
 
     </button>
 
+    <!-- modal img -->
+   {projectInfo.images && (
+  <div class="slider" data-slider>
+    <button class="slider-btn prev" aria-label="Anterior">
+  <svg viewBox="0 0 24 24" width="20" height="20">
+    <path d="M15 6l-6 6 6 6" stroke="white" stroke-width="3" fill="none"/>
+  </svg>
+</button>
 
-    {projectInfo.image && (
-      <div class="modal-image">
-        <img src={projectInfo.image} alt={`Imagen de ${title}`} />
-      </div>
-    )}
+    <div class="slider-track">
+      {projectInfo.images.map(img => (
+        <img src={img} alt={`Imagen de ${title}`} />
+      ))}
+    </div>
 
+    <button class="slider-btn next" aria-label="Siguiente">
+  <svg viewBox="0 0 24 24" width="20" height="20">
+    <path d="M9 6l6 6-6 6" stroke="white" stroke-width="3" fill="none"/>
+  </svg>
+</button>
+
+  </div>
+)}
+
+    <!-- modal body  -->
     <div class="modal-body">
       <section class="modal-section">
         <h3>Cómo surgió el proyecto</h3>
@@ -112,37 +117,7 @@ const uniqueId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const modals = document.querySelectorAll('.modal-overlay');
-    
-    modals.forEach(modal => {
-      const closeBtn = modal.querySelector('.modal-close');
-      
-      // Cerrar al hacer click en el botón de cerrar
-      closeBtn?.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-      
-      // Cerrar al hacer click fuera del modal
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-      
-      // Cerrar con tecla ESC
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-          modal.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    });
-  });
-</script>
+
 
 <style>
 .project-card {
@@ -248,44 +223,30 @@ background: linear-gradient(
 
 .modal-close {
   position: absolute;
-  top: 0rem;
+  top: .1rem;
   right: 1.5rem;
   background: transparent;
   border-radius: 50%;
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all 0.2s ease;
   color: red;
   z-index: 10;
 }
 
 .modal-close svg {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
 }
 
 .modal-close:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.264);
 }
 
-.modal-image {
-  width: 100%;
-  height: 150px;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: .5rem;
-}
-
-.modal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .modal-body {
   display: flex;
@@ -302,7 +263,62 @@ background: linear-gradient(
 .modal-section p {
   font-size: 0.9rem;
   line-height: 1.4;
+  margin-top: .7rem;
 }
+
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: .5rem;
+}
+
+.slider-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.slider-track img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.515);
+  font-size: 27px;
+  z-index: 5; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s ease;
+}
+
+.slider-btn.prev {
+  left: 8px;
+}
+
+.slider-btn.next {
+  right: 8px;
+}
+
+
+.slider-btn:hover {
+    background: rgba(121, 121, 121, 0.581);
+}
+
 
 .modal-content::-webkit-scrollbar {
   width: 4px;
@@ -350,3 +366,61 @@ background: linear-gradient(
   }
 }
 </style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modals = document.querySelectorAll('.modal-overlay');
+    
+    modals.forEach(modal => {
+      const closeBtn = modal.querySelector('.modal-close');
+      
+      // Cerrar al hacer click en el botón de cerrar
+      closeBtn?.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      
+      // Cerrar al hacer click fuera del modal
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+      
+      // Cerrar con tecla ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  });
+
+
+  document.querySelectorAll('[data-slider]').forEach(slider => {
+  const track = slider.querySelector('.slider-track');
+  const images = track.children;
+  const prev = slider.querySelector('.prev');
+  const next = slider.querySelector('.next');
+
+  let index = 0;
+
+  function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prev.addEventListener('click', () => {
+    index = (index - 1 + images.length) % images.length;
+    update();
+  });
+
+  next.addEventListener('click', () => {
+    index = (index + 1) % images.length;
+    update();
+  });
+});
+
+</script>
