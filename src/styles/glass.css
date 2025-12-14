@@ -1,9 +1,9 @@
 /* Card con efecto glass */
 .glass {
   background: rgba(0, 0, 0, 0.297);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid #b5b5b58f;
+  border: 1px solid #8f8f8f7d;
 }
 
 

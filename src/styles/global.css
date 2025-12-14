@@ -45,6 +45,7 @@ textarea,
 select,
 [role="button"] {
   cursor: url('/cursor/cursor.cur'), pointer;
+  text-decoration: none;
 }
 
 
