@@ -8,12 +8,12 @@
 
 
 .buttonGlass {
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid #d3d3d38f;
+  background-color: #ffffff00;
+  border: 1px solid #d3d3d356;
   box-shadow:
     0 4px 5px rgba(0, 0, 0, 0.082),
     inset 0px 0px 80px rgba(255, 255, 255, 0.114);
-  cursor: url('/cursor/cursor.cur'), pointer; /* cursor personalizado */
+  cursor: url('/cursor/cursor.cur'), pointer; 
   display: inline-flex;
   color: var(--color-white-pure);
   align-items: center;
