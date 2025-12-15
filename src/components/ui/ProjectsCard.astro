@@ -56,7 +56,7 @@ const uniqueId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
 </div>
 
 <!-- Modal -->
-<div id={uniqueId} class="modal-overlay active">
+<div id={uniqueId} class="modal-overlay ">
   <div class="modal-content glass-base">
     <button class="modal-close" aria-label="Cerrar modal">
       <svg
@@ -167,19 +167,14 @@ const uniqueId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
 .modal-overlay {
   position: fixed;
   inset: 0;
-background: linear-gradient(
-  to bottom,
-  #0429a36d 0%,  
-  #043db8a0 50%, 
-  #00bbfa20 100%  
-); 
+
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
   padding: .8rem;
 }
 
@@ -194,14 +189,14 @@ background: linear-gradient(
   max-height: 80vh;
   overflow-y: auto;
   border-radius: 32px;
-  padding: 2rem;
+  padding:2.1rem;
   position: relative;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.907) 0%,
-    rgba(22, 22, 22, 0.846) 70%,
+    rgba(22, 22, 22, 0.877) 70%,
     rgba(0, 0, 0, 0.906) 100%,
-    rgba(1, 22, 22, 0.501) 100% 
+    rgba(1, 22, 22, 0.609) 100% 
   );
 
   transform: scale(0.3);
