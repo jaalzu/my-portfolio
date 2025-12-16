@@ -51,7 +51,8 @@ export default function DecryptText({ originalText, hoverText, className = "" }:
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          cursor: pointer;
+            cursor: url('/cursor/normal.cur'), pointer; 
+
         }
 
         .flag {
