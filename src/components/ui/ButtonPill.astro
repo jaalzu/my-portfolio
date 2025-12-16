@@ -11,23 +11,24 @@ const { projectUrl, codeUrl, modalId } = Astro.props;
 <div class="buttonGlass glass-base pillContainer">
   
   <a href={projectUrl} target="_blank" rel="noopener noreferrer" class="pillButton pillButton--first">
-    <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="25" 
-      height="25" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="#6CFF9D" 
-      stroke-width="2" 
-      stroke-linecap="round" 
-      stroke-linejoin="round"
-      class="icon-spacer" 
-      aria-label="Sitio Web"
-    >
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-      <polyline points="15 3 21 3 21 9"></polyline>
-      <line x1="10" y1="14" x2="21" y2="3"></line>
-    </svg>
+    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="25"
+  height="25"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="#6CFF9D"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon-spacer"
+  aria-label="Sitio Web"
+>
+  <circle cx="12" cy="12" r="10"></circle>
+  <line x1="2" y1="12" x2="22" y2="12"></line>
+  <path d="M12 2a15.3 15.3 0 0 1 0 20a15.3 15.3 0 0 1 0-20"></path>
+</svg>
+
     <span>Sitio web</span>
   </a>
   
@@ -96,15 +97,16 @@ const { projectUrl, codeUrl, modalId } = Astro.props;
     width: fit-content;
     align-items: stretch !important;
     padding: 0 !important;
+    transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.1s ease;
   }
 
   .pillContainer:hover {
     background-color: rgba(255, 255, 255, 0) !important;
-   
   }
 
- 
- 
 
   .pillButton {
     padding: 0.5rem 1.2rem;
@@ -120,8 +122,13 @@ const { projectUrl, codeUrl, modalId } = Astro.props;
     cursor: pointer;
     font-family: inherit;
   cursor: url('/cursor/normal.cur'), pointer; 
+   transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.1s ease;
   } 
 
+   
 
   .icon-spacer {
     margin-right: 0.5rem; 
@@ -141,17 +148,17 @@ const { projectUrl, codeUrl, modalId } = Astro.props;
   }
 
   .pillButton:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(255, 255, 255, 0.089);
   }
 
   .pillButton:active {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.166);
   }
 
   .divider {
-    width: 1px;
+    width: 2px;
     align-self: stretch;
-    background-color: #d3d3d350;
+    background-color: #b0afaf1f;
     margin: 0;
   }
 </style>
